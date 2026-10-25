@@ -31,6 +31,14 @@ jobs:
         run: python tools/sql-scaffold/generate.py --prune
       - name: Verify generated files are deterministic
         run: python tools/sql-scaffold/generate.py --check
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "8"
+      - name: Compile generated Java scaffolding
+        run: |
+          mkdir -p /tmp/nrohend-generated-classes
+          find src/com/girlkun/generated -name "*.java" -print0 | xargs -0 javac -d /tmp/nrohend-generated-classes
       - name: Check whitespace errors
         run: git diff --check
       - name: Commit generated code and docs if changed
