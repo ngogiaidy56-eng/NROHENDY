@@ -1,0 +1,3696 @@
+{
+  "source": "hendy.sql",
+  "source_sha256": "f54503678d8e1700f1af1f1a11f4ff82992de851aa723cfd9c6daa4dfccdd7aa",
+  "table_count": 45,
+  "tables": [
+    {
+      "name": "account",
+      "class_name": "Account",
+      "java_model": "src/com/girlkun/generated/model/AccountRow.java",
+      "java_sql": "src/com/girlkun/generated/sql/AccountSql.java",
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        {
+          "name": "username",
+          "columns": [
+            "username"
+          ],
+          "unique": true,
+          "type": "UNIQUE"
+        }
+      ],
+      "foreign_keys": [],
+      "columns": [
+        {
+          "name": "id",
+          "field_name": "id",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": true,
+          "default": null
+        },
+        {
+          "name": "username",
+          "field_name": "username",
+          "sql_type": "varchar(20)",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "password",
+          "field_name": "password",
+          "sql_type": "varchar(100)",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "create_time",
+          "field_name": "createTime",
+          "sql_type": "timestamp",
+          "java_type": "java.sql.Timestamp",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "current_timestamp()"
+        },
+        {
+          "name": "update_time",
+          "field_name": "updateTime",
+          "sql_type": "timestamp",
+          "java_type": "java.sql.Timestamp",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "current_timestamp()"
+        },
+        {
+          "name": "ban",
+          "field_name": "ban",
+          "sql_type": "smallint(6)",
+          "java_type": "Short",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "0"
+        },
+        {
+          "name": "point_post",
+          "field_name": "pointPost",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "0"
+        },
+        {
+          "name": "last_post",
+          "field_name": "lastPost",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "0"
+        },
+        {
+          "name": "role",
+          "field_name": "role",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "-1"
+        },
+        {
+          "name": "is_admin",
+          "field_name": "isAdmin",
+          "sql_type": "tinyint(1)",
+          "java_type": "Boolean",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "0"
+        },
+        {
+          "name": "last_time_login",
+          "field_name": "lastTimeLogin",
+          "sql_type": "timestamp",
+          "java_type": "java.sql.Timestamp",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "'2002-05-07 07:00:00'"
+        },
+        {
+          "name": "last_time_logout",
+          "field_name": "lastTimeLogout",
+          "sql_type": "timestamp",
+          "java_type": "java.sql.Timestamp",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "'2002-05-07 07:00:00'"
+        },
+        {
+          "name": "ip_address",
+          "field_name": "ipAddress",
+          "sql_type": "varchar(50)",
+          "java_type": "String",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "NULL"
+        },
+        {
+          "name": "active",
+          "field_name": "active",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "0"
+        },
+        {
+          "name": "thoi_vang",
+          "field_name": "thoiVang",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "0"
+        },
+        {
+          "name": "server_login",
+          "field_name": "serverLogin",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "-1"
+        },
+        {
+          "name": "bd_player",
+          "field_name": "bdPlayer",
+          "sql_type": "double",
+          "java_type": "Double",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "1"
+        },
+        {
+          "name": "is_gift_box",
+          "field_name": "isGiftBox",
+          "sql_type": "tinyint(1)",
+          "java_type": "Boolean",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "0"
+        },
+        {
+          "name": "gift_time",
+          "field_name": "giftTime",
+          "sql_type": "varchar(255)",
+          "java_type": "String",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "'0'"
+        },
+        {
+          "name": "reward",
+          "field_name": "reward",
+          "sql_type": "longtext",
+          "java_type": "String",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "NULL"
+        },
+        {
+          "name": "tongnap",
+          "field_name": "tongnap",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "0"
+        },
+        {
+          "name": "coin",
+          "field_name": "coin",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "0"
+        },
+        {
+          "name": "vnd",
+          "field_name": "vnd",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "0"
+        }
+      ]
+    },
+    {
+      "name": "archive_template",
+      "class_name": "ArchiveTemplate",
+      "java_model": "src/com/girlkun/generated/model/ArchiveTemplateRow.java",
+      "java_sql": "src/com/girlkun/generated/sql/ArchiveTemplateSql.java",
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        {
+          "name": "id",
+          "columns": [
+            "id"
+          ],
+          "unique": false,
+          "type": "KEY"
+        }
+      ],
+      "foreign_keys": [],
+      "columns": [
+        {
+          "name": "id",
+          "field_name": "id",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "info1",
+          "field_name": "info1",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "info2",
+          "field_name": "info2",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "money",
+          "field_name": "money",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        }
+      ]
+    },
+    {
+      "name": "bg_item_template",
+      "class_name": "BgItemTemplate",
+      "java_model": "src/com/girlkun/generated/model/BgItemTemplateRow.java",
+      "java_sql": "src/com/girlkun/generated/sql/BgItemTemplateSql.java",
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [],
+      "foreign_keys": [],
+      "columns": [
+        {
+          "name": "id",
+          "field_name": "id",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "image_id",
+          "field_name": "imageId",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "layer",
+          "field_name": "layer",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "dx",
+          "field_name": "dx",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "dy",
+          "field_name": "dy",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        }
+      ]
+    },
+    {
+      "name": "caption",
+      "class_name": "Caption",
+      "java_model": "src/com/girlkun/generated/model/CaptionRow.java",
+      "java_sql": "src/com/girlkun/generated/sql/CaptionSql.java",
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [],
+      "foreign_keys": [],
+      "columns": [
+        {
+          "name": "id",
+          "field_name": "id",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": true,
+          "default": null
+        },
+        {
+          "name": "NAME",
+          "field_name": "name",
+          "sql_type": "varchar(255)",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "class_name": "Card",
+      "java_model": "src/com/girlkun/generated/model/CardRow.java",
+      "java_sql": "src/com/girlkun/generated/sql/CardSql.java",
+      "primary_key": [],
+      "indexes": [],
+      "foreign_keys": [],
+      "columns": [
+        {
+          "name": "card_id",
+          "field_name": "cardId",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "NAME",
+          "field_name": "name",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "NULL"
+        },
+        {
+          "name": "khuyen_mai",
+          "field_name": "khuyenMai",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "0"
+        },
+        {
+          "name": "status",
+          "field_name": "status",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "0"
+        }
+      ]
+    },
+    {
+      "name": "card_detail",
+      "class_name": "CardDetail",
+      "java_model": "src/com/girlkun/generated/model/CardDetailRow.java",
+      "java_sql": "src/com/girlkun/generated/sql/CardDetailSql.java",
+      "primary_key": [
+        "card_detail_id"
+      ],
+      "indexes": [
+        {
+          "name": "card_id",
+          "columns": [
+            "card_id"
+          ],
+          "unique": false,
+          "type": "KEY"
+        }
+      ],
+      "foreign_keys": [],
+      "columns": [
+        {
+          "name": "card_detail_id",
+          "field_name": "cardDetailId",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": true,
+          "default": null
+        },
+        {
+          "name": "card_id",
+          "field_name": "cardId",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "price",
+          "field_name": "price",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "thoi_vang",
+          "field_name": "thoiVang",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        }
+      ]
+    },
+    {
+      "name": "clan_sv1",
+      "class_name": "ClanSv1",
+      "java_model": "src/com/girlkun/generated/model/ClanSv1Row.java",
+      "java_sql": "src/com/girlkun/generated/sql/ClanSv1Sql.java",
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [],
+      "foreign_keys": [],
+      "columns": [
+        {
+          "name": "id",
+          "field_name": "id",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "NAME",
+          "field_name": "name",
+          "sql_type": "varchar(255)",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "slogan",
+          "field_name": "slogan",
+          "sql_type": "varchar(255)",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "''"
+        },
+        {
+          "name": "img_id",
+          "field_name": "imgId",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "0"
+        },
+        {
+          "name": "power_point",
+          "field_name": "powerPoint",
+          "sql_type": "bigint(20)",
+          "java_type": "Long",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "0"
+        },
+        {
+          "name": "max_member",
+          "field_name": "maxMember",
+          "sql_type": "smallint(6)",
+          "java_type": "Short",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "10"
+        },
+        {
+          "name": "clan_point",
+          "field_name": "clanPoint",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "0"
+        },
+        {
+          "name": "LEVEL",
+          "field_name": "level",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "1"
+        },
+        {
+          "name": "members",
+          "field_name": "members",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "create_time",
+          "field_name": "createTime",
+          "sql_type": "timestamp",
+          "java_type": "java.sql.Timestamp",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "current_timestamp()"
+        }
+      ]
+    },
+    {
+      "name": "clan_sv2",
+      "class_name": "ClanSv2",
+      "java_model": "src/com/girlkun/generated/model/ClanSv2Row.java",
+      "java_sql": "src/com/girlkun/generated/sql/ClanSv2Sql.java",
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [],
+      "foreign_keys": [],
+      "columns": [
+        {
+          "name": "id",
+          "field_name": "id",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "NAME",
+          "field_name": "name",
+          "sql_type": "varchar(255)",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "slogan",
+          "field_name": "slogan",
+          "sql_type": "varchar(255)",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "''"
+        },
+        {
+          "name": "img_id",
+          "field_name": "imgId",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "0"
+        },
+        {
+          "name": "power_point",
+          "field_name": "powerPoint",
+          "sql_type": "bigint(20)",
+          "java_type": "Long",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "0"
+        },
+        {
+          "name": "max_member",
+          "field_name": "maxMember",
+          "sql_type": "smallint(6)",
+          "java_type": "Short",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "10"
+        },
+        {
+          "name": "clan_point",
+          "field_name": "clanPoint",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "0"
+        },
+        {
+          "name": "LEVEL",
+          "field_name": "level",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "1"
+        },
+        {
+          "name": "members",
+          "field_name": "members",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "create_time",
+          "field_name": "createTime",
+          "sql_type": "timestamp",
+          "java_type": "java.sql.Timestamp",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "current_timestamp()"
+        }
+      ]
+    },
+    {
+      "name": "comment",
+      "class_name": "Comment",
+      "java_model": "src/com/girlkun/generated/model/CommentRow.java",
+      "java_sql": "src/com/girlkun/generated/sql/CommentSql.java",
+      "primary_key": [
+        "comment_id"
+      ],
+      "indexes": [
+        {
+          "name": "question_id",
+          "columns": [
+            "question_id"
+          ],
+          "unique": false,
+          "type": "KEY"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "name": "comment_ibfk_1",
+          "columns": [
+            "question_id"
+          ],
+          "referenced_table": "post_question",
+          "referenced_columns": [
+            "question_id"
+          ],
+          "on_delete": null,
+          "on_update": null
+        }
+      ],
+      "columns": [
+        {
+          "name": "comment_id",
+          "field_name": "commentId",
+          "sql_type": "bigint(20)",
+          "java_type": "Long",
+          "nullable": false,
+          "auto_increment": true,
+          "default": null
+        },
+        {
+          "name": "question_id",
+          "field_name": "questionId",
+          "sql_type": "bigint(20)",
+          "java_type": "Long",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "content",
+          "field_name": "content",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "NULL"
+        },
+        {
+          "name": "created",
+          "field_name": "created",
+          "sql_type": "timestamp",
+          "java_type": "java.sql.Timestamp",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "current_timestamp()"
+        }
+      ]
+    },
+    {
+      "name": "dhvt_template",
+      "class_name": "DhvtTemplate",
+      "java_model": "src/com/girlkun/generated/model/DhvtTemplateRow.java",
+      "java_sql": "src/com/girlkun/generated/sql/DhvtTemplateSql.java",
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [],
+      "foreign_keys": [],
+      "columns": [
+        {
+          "name": "id",
+          "field_name": "id",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": true,
+          "default": null
+        },
+        {
+          "name": "cup",
+          "field_name": "cup",
+          "sql_type": "varchar(999)",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "'0'"
+        },
+        {
+          "name": "time",
+          "field_name": "time",
+          "sql_type": "varchar(999)",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "'0'"
+        },
+        {
+          "name": "gem",
+          "field_name": "gem",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "0"
+        },
+        {
+          "name": "gold",
+          "field_name": "gold",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "0"
+        },
+        {
+          "name": "min_start",
+          "field_name": "minStart",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "0"
+        },
+        {
+          "name": "min_limit",
+          "field_name": "minLimit",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "0"
+        }
+      ]
+    },
+    {
+      "name": "flag_bag",
+      "class_name": "FlagBag",
+      "java_model": "src/com/girlkun/generated/model/FlagBagRow.java",
+      "java_sql": "src/com/girlkun/generated/sql/FlagBagSql.java",
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [],
+      "foreign_keys": [],
+      "columns": [
+        {
+          "name": "id",
+          "field_name": "id",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "icon_data",
+          "field_name": "iconData",
+          "sql_type": "varchar(255)",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "NAME",
+          "field_name": "name",
+          "sql_type": "varchar(255)",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "'flag_bag'"
+        },
+        {
+          "name": "gold",
+          "field_name": "gold",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "-1"
+        },
+        {
+          "name": "gem",
+          "field_name": "gem",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "-1"
+        },
+        {
+          "name": "icon_id",
+          "field_name": "iconId",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "0"
+        }
+      ]
+    },
+    {
+      "name": "giftcode",
+      "class_name": "Giftcode",
+      "java_model": "src/com/girlkun/generated/model/GiftcodeRow.java",
+      "java_sql": "src/com/girlkun/generated/sql/GiftcodeSql.java",
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [],
+      "foreign_keys": [],
+      "columns": [
+        {
+          "name": "id",
+          "field_name": "id",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": true,
+          "default": null
+        },
+        {
+          "name": "code",
+          "field_name": "code",
+          "sql_type": "varchar(255)",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "count_left",
+          "field_name": "countLeft",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "detail",
+          "field_name": "detail",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "datecreate",
+          "field_name": "datecreate",
+          "sql_type": "timestamp",
+          "java_type": "java.sql.Timestamp",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "current_timestamp()"
+        },
+        {
+          "name": "expired",
+          "field_name": "expired",
+          "sql_type": "timestamp",
+          "java_type": "java.sql.Timestamp",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "NULL"
+        },
+        {
+          "name": "itemoption",
+          "field_name": "itemoption",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "listIdUser",
+          "field_name": "listIdUser",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "'[]'"
+        }
+      ]
+    },
+    {
+      "name": "head_avatar",
+      "class_name": "HeadAvatar",
+      "java_model": "src/com/girlkun/generated/model/HeadAvatarRow.java",
+      "java_sql": "src/com/girlkun/generated/sql/HeadAvatarSql.java",
+      "primary_key": [
+        "head_id"
+      ],
+      "indexes": [],
+      "foreign_keys": [],
+      "columns": [
+        {
+          "name": "head_id",
+          "field_name": "headId",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "avatar_id",
+          "field_name": "avatarId",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        }
+      ]
+    },
+    {
+      "name": "history_event",
+      "class_name": "HistoryEvent",
+      "java_model": "src/com/girlkun/generated/model/HistoryEventRow.java",
+      "java_sql": "src/com/girlkun/generated/sql/HistoryEventSql.java",
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [],
+      "foreign_keys": [],
+      "columns": [
+        {
+          "name": "id",
+          "field_name": "id",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": true,
+          "default": null
+        },
+        {
+          "name": "name",
+          "field_name": "name",
+          "sql_type": "varchar(255)",
+          "java_type": "String",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "NULL"
+        },
+        {
+          "name": "point",
+          "field_name": "point",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "0"
+        },
+        {
+          "name": "created",
+          "field_name": "created",
+          "sql_type": "date",
+          "java_type": "java.sql.Date",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "current_timestamp()"
+        }
+      ]
+    },
+    {
+      "name": "history_gold",
+      "class_name": "HistoryGold",
+      "java_model": "src/com/girlkun/generated/model/HistoryGoldRow.java",
+      "java_sql": "src/com/girlkun/generated/sql/HistoryGoldSql.java",
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [],
+      "foreign_keys": [],
+      "columns": [
+        {
+          "name": "id",
+          "field_name": "id",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": true,
+          "default": null
+        },
+        {
+          "name": "name",
+          "field_name": "name",
+          "sql_type": "varchar(255)",
+          "java_type": "String",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "NULL"
+        },
+        {
+          "name": "gold",
+          "field_name": "gold",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "NULL"
+        }
+      ]
+    },
+    {
+      "name": "history_receive_goldbar",
+      "class_name": "HistoryReceiveGoldbar",
+      "java_model": "src/com/girlkun/generated/model/HistoryReceiveGoldbarRow.java",
+      "java_sql": "src/com/girlkun/generated/sql/HistoryReceiveGoldbarSql.java",
+      "primary_key": [],
+      "indexes": [
+        {
+          "name": "player_id",
+          "columns": [
+            "player_id"
+          ],
+          "unique": false,
+          "type": "KEY"
+        }
+      ],
+      "foreign_keys": [],
+      "columns": [
+        {
+          "name": "player_id",
+          "field_name": "playerId",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "player_name",
+          "field_name": "playerName",
+          "sql_type": "varchar(255)",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "gold_before_receive",
+          "field_name": "goldBeforeReceive",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "gold_after_receive",
+          "field_name": "goldAfterReceive",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "gold_bag_before",
+          "field_name": "goldBagBefore",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "gold_bag_after",
+          "field_name": "goldBagAfter",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "gold_box_before",
+          "field_name": "goldBoxBefore",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "gold_box_after",
+          "field_name": "goldBoxAfter",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "time_receive",
+          "field_name": "timeReceive",
+          "sql_type": "datetime",
+          "java_type": "java.sql.Timestamp",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "current_timestamp()"
+        }
+      ]
+    },
+    {
+      "name": "history_transaction",
+      "class_name": "HistoryTransaction",
+      "java_model": "src/com/girlkun/generated/model/HistoryTransactionRow.java",
+      "java_sql": "src/com/girlkun/generated/sql/HistoryTransactionSql.java",
+      "primary_key": [],
+      "indexes": [],
+      "foreign_keys": [],
+      "columns": [
+        {
+          "name": "player_1",
+          "field_name": "player1",
+          "sql_type": "varchar(255)",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "player_2",
+          "field_name": "player2",
+          "sql_type": "varchar(255)",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "item_player_1",
+          "field_name": "itemPlayer1",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "item_player_2",
+          "field_name": "itemPlayer2",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "bag_1_before_tran",
+          "field_name": "bag1BeforeTran",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "bag_2_before_tran",
+          "field_name": "bag2BeforeTran",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "bag_1_after_tran",
+          "field_name": "bag1AfterTran",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "bag_2_after_tran",
+          "field_name": "bag2AfterTran",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "time_tran",
+          "field_name": "timeTran",
+          "sql_type": "timestamp",
+          "java_type": "java.sql.Timestamp",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "current_timestamp()"
+        }
+      ]
+    },
+    {
+      "name": "img_by_name",
+      "class_name": "ImgByName",
+      "java_model": "src/com/girlkun/generated/model/ImgByNameRow.java",
+      "java_sql": "src/com/girlkun/generated/sql/ImgByNameSql.java",
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        {
+          "name": "NAME",
+          "columns": [
+            "NAME"
+          ],
+          "unique": true,
+          "type": "UNIQUE"
+        }
+      ],
+      "foreign_keys": [],
+      "columns": [
+        {
+          "name": "id",
+          "field_name": "id",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": true,
+          "default": null
+        },
+        {
+          "name": "NAME",
+          "field_name": "name",
+          "sql_type": "varchar(55)",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "n_frame",
+          "field_name": "nFrame",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        }
+      ]
+    },
+    {
+      "name": "intrinsic",
+      "class_name": "Intrinsic",
+      "java_model": "src/com/girlkun/generated/model/IntrinsicRow.java",
+      "java_sql": "src/com/girlkun/generated/sql/IntrinsicSql.java",
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [],
+      "foreign_keys": [],
+      "columns": [
+        {
+          "name": "id",
+          "field_name": "id",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "NAME",
+          "field_name": "name",
+          "sql_type": "varchar(255)",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "param_from_1",
+          "field_name": "paramFrom1",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "0"
+        },
+        {
+          "name": "param_to_1",
+          "field_name": "paramTo1",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "0"
+        },
+        {
+          "name": "param_from_2",
+          "field_name": "paramFrom2",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "0"
+        },
+        {
+          "name": "param_to_2",
+          "field_name": "paramTo2",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "0"
+        },
+        {
+          "name": "icon",
+          "field_name": "icon",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "0"
+        },
+        {
+          "name": "gender",
+          "field_name": "gender",
+          "sql_type": "smallint(6)",
+          "java_type": "Short",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "3"
+        }
+      ]
+    },
+    {
+      "name": "item_option_template",
+      "class_name": "ItemOptionTemplate",
+      "java_model": "src/com/girlkun/generated/model/ItemOptionTemplateRow.java",
+      "java_sql": "src/com/girlkun/generated/sql/ItemOptionTemplateSql.java",
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [],
+      "foreign_keys": [],
+      "columns": [
+        {
+          "name": "id",
+          "field_name": "id",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "NAME",
+          "field_name": "name",
+          "sql_type": "varchar(255)",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        }
+      ]
+    },
+    {
+      "name": "item_shop",
+      "class_name": "ItemShop",
+      "java_model": "src/com/girlkun/generated/model/ItemShopRow.java",
+      "java_sql": "src/com/girlkun/generated/sql/ItemShopSql.java",
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        {
+          "name": "tab_id",
+          "columns": [
+            "tab_id"
+          ],
+          "unique": false,
+          "type": "KEY"
+        },
+        {
+          "name": "temp_id",
+          "columns": [
+            "temp_id"
+          ],
+          "unique": false,
+          "type": "KEY"
+        }
+      ],
+      "foreign_keys": [],
+      "columns": [
+        {
+          "name": "id",
+          "field_name": "id",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": true,
+          "default": null
+        },
+        {
+          "name": "tab_id",
+          "field_name": "tabId",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "temp_id",
+          "field_name": "tempId",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "is_new",
+          "field_name": "isNew",
+          "sql_type": "tinyint(1)",
+          "java_type": "Boolean",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "1"
+        },
+        {
+          "name": "is_sell",
+          "field_name": "isSell",
+          "sql_type": "tinyint(1)",
+          "java_type": "Boolean",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "1"
+        },
+        {
+          "name": "type_sell",
+          "field_name": "typeSell",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "1"
+        },
+        {
+          "name": "cost",
+          "field_name": "cost",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "0"
+        },
+        {
+          "name": "icon_spec",
+          "field_name": "iconSpec",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "0"
+        },
+        {
+          "name": "create_time",
+          "field_name": "createTime",
+          "sql_type": "timestamp",
+          "java_type": "java.sql.Timestamp",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "current_timestamp()"
+        }
+      ]
+    },
+    {
+      "name": "item_shop_option",
+      "class_name": "ItemShopOption",
+      "java_model": "src/com/girlkun/generated/model/ItemShopOptionRow.java",
+      "java_sql": "src/com/girlkun/generated/sql/ItemShopOptionSql.java",
+      "primary_key": [],
+      "indexes": [
+        {
+          "name": "item_shop_id",
+          "columns": [
+            "item_shop_id"
+          ],
+          "unique": false,
+          "type": "KEY"
+        },
+        {
+          "name": "option_id",
+          "columns": [
+            "option_id"
+          ],
+          "unique": false,
+          "type": "KEY"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "name": "item_shop_option_ibfk_1",
+          "columns": [
+            "item_shop_id"
+          ],
+          "referenced_table": "item_shop",
+          "referenced_columns": [
+            "id"
+          ],
+          "on_delete": "CASCADE",
+          "on_update": null
+        },
+        {
+          "name": "item_shop_option_ibfk_2",
+          "columns": [
+            "option_id"
+          ],
+          "referenced_table": "item_option_template",
+          "referenced_columns": [
+            "id"
+          ],
+          "on_delete": null,
+          "on_update": null
+        }
+      ],
+      "columns": [
+        {
+          "name": "item_shop_id",
+          "field_name": "itemShopId",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "option_id",
+          "field_name": "optionId",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "param",
+          "field_name": "param",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        }
+      ]
+    },
+    {
+      "name": "item_template",
+      "class_name": "ItemTemplate",
+      "java_model": "src/com/girlkun/generated/model/ItemTemplateRow.java",
+      "java_sql": "src/com/girlkun/generated/sql/ItemTemplateSql.java",
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [],
+      "foreign_keys": [],
+      "columns": [
+        {
+          "name": "id",
+          "field_name": "id",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "TYPE",
+          "field_name": "type",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "gender",
+          "field_name": "gender",
+          "sql_type": "smallint(6)",
+          "java_type": "Short",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "NAME",
+          "field_name": "name",
+          "sql_type": "varchar(255)",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "description",
+          "field_name": "description",
+          "sql_type": "varchar(255)",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "icon_id",
+          "field_name": "iconId",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "part",
+          "field_name": "part",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "is_up_to_up",
+          "field_name": "isUpToUp",
+          "sql_type": "tinyint(1)",
+          "java_type": "Boolean",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "power_require",
+          "field_name": "powerRequire",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "gold",
+          "field_name": "gold",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "0"
+        },
+        {
+          "name": "gem",
+          "field_name": "gem",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "0"
+        },
+        {
+          "name": "head",
+          "field_name": "head",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "-1"
+        },
+        {
+          "name": "body",
+          "field_name": "body",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "-1"
+        },
+        {
+          "name": "leg",
+          "field_name": "leg",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "-1"
+        }
+      ]
+    },
+    {
+      "name": "map_template",
+      "class_name": "MapTemplate",
+      "java_model": "src/com/girlkun/generated/model/MapTemplateRow.java",
+      "java_sql": "src/com/girlkun/generated/sql/MapTemplateSql.java",
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [],
+      "foreign_keys": [],
+      "columns": [
+        {
+          "name": "id",
+          "field_name": "id",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "NAME",
+          "field_name": "name",
+          "sql_type": "varchar(55)",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "zones",
+          "field_name": "zones",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "1"
+        },
+        {
+          "name": "max_player",
+          "field_name": "maxPlayer",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "15"
+        },
+        {
+          "name": "data",
+          "field_name": "data",
+          "sql_type": "varchar(1000)",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "'[]'"
+        },
+        {
+          "name": "type",
+          "field_name": "type",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "1"
+        },
+        {
+          "name": "planet_id",
+          "field_name": "planetId",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "1"
+        },
+        {
+          "name": "bg_type",
+          "field_name": "bgType",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "1"
+        },
+        {
+          "name": "tile_id",
+          "field_name": "tileId",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "1"
+        },
+        {
+          "name": "bg_id",
+          "field_name": "bgId",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "1"
+        },
+        {
+          "name": "waypoints",
+          "field_name": "waypoints",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "mobs",
+          "field_name": "mobs",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "npcs",
+          "field_name": "npcs",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        }
+      ]
+    },
+    {
+      "name": "mob_template",
+      "class_name": "MobTemplate",
+      "java_model": "src/com/girlkun/generated/model/MobTemplateRow.java",
+      "java_sql": "src/com/girlkun/generated/sql/MobTemplateSql.java",
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [],
+      "foreign_keys": [],
+      "columns": [
+        {
+          "name": "id",
+          "field_name": "id",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "TYPE",
+          "field_name": "type",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "NAME",
+          "field_name": "name",
+          "sql_type": "varchar(50)",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "hp",
+          "field_name": "hp",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "range_move",
+          "field_name": "rangeMove",
+          "sql_type": "smallint(6)",
+          "java_type": "Short",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "speed",
+          "field_name": "speed",
+          "sql_type": "smallint(6)",
+          "java_type": "Short",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "dart_type",
+          "field_name": "dartType",
+          "sql_type": "smallint(6)",
+          "java_type": "Short",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "percent_dame",
+          "field_name": "percentDame",
+          "sql_type": "smallint(6)",
+          "java_type": "Short",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "5"
+        },
+        {
+          "name": "percent_tiem_nang",
+          "field_name": "percentTiemNang",
+          "sql_type": "smallint(6)",
+          "java_type": "Short",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "50"
+        }
+      ]
+    },
+    {
+      "name": "naptien",
+      "class_name": "Naptien",
+      "java_model": "src/com/girlkun/generated/model/NaptienRow.java",
+      "java_sql": "src/com/girlkun/generated/sql/NaptienSql.java",
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [],
+      "foreign_keys": [],
+      "columns": [
+        {
+          "name": "id",
+          "field_name": "id",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": true,
+          "default": null
+        },
+        {
+          "name": "uid",
+          "field_name": "uid",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "NULL"
+        },
+        {
+          "name": "sotien",
+          "field_name": "sotien",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "NULL"
+        },
+        {
+          "name": "seri",
+          "field_name": "seri",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "NULL"
+        },
+        {
+          "name": "code",
+          "field_name": "code",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "NULL"
+        },
+        {
+          "name": "loaithe",
+          "field_name": "loaithe",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "NULL"
+        },
+        {
+          "name": "time",
+          "field_name": "time",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "NULL"
+        },
+        {
+          "name": "noidung",
+          "field_name": "noidung",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "NULL"
+        },
+        {
+          "name": "tinhtrang",
+          "field_name": "tinhtrang",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "NULL"
+        },
+        {
+          "name": "tranid",
+          "field_name": "tranid",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "NULL"
+        },
+        {
+          "name": "magioithieu",
+          "field_name": "magioithieu",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        }
+      ]
+    },
+    {
+      "name": "nclass",
+      "class_name": "Nclass",
+      "java_model": "src/com/girlkun/generated/model/NclassRow.java",
+      "java_sql": "src/com/girlkun/generated/sql/NclassSql.java",
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [],
+      "foreign_keys": [],
+      "columns": [
+        {
+          "name": "id",
+          "field_name": "id",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "NAME",
+          "field_name": "name",
+          "sql_type": "varchar(50)",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        }
+      ]
+    },
+    {
+      "name": "npc_template",
+      "class_name": "NpcTemplate",
+      "java_model": "src/com/girlkun/generated/model/NpcTemplateRow.java",
+      "java_sql": "src/com/girlkun/generated/sql/NpcTemplateSql.java",
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [],
+      "foreign_keys": [],
+      "columns": [
+        {
+          "name": "id",
+          "field_name": "id",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "NAME",
+          "field_name": "name",
+          "sql_type": "varchar(50)",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "head",
+          "field_name": "head",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "body",
+          "field_name": "body",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "leg",
+          "field_name": "leg",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "avatar",
+          "field_name": "avatar",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "0"
+        }
+      ]
+    },
+    {
+      "name": "part",
+      "class_name": "Part",
+      "java_model": "src/com/girlkun/generated/model/PartRow.java",
+      "java_sql": "src/com/girlkun/generated/sql/PartSql.java",
+      "primary_key": [],
+      "indexes": [],
+      "foreign_keys": [],
+      "columns": [
+        {
+          "name": "id",
+          "field_name": "id",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "TYPE",
+          "field_name": "type",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "DATA",
+          "field_name": "data",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        }
+      ]
+    },
+    {
+      "name": "player",
+      "class_name": "Player",
+      "java_model": "src/com/girlkun/generated/model/PlayerRow.java",
+      "java_sql": "src/com/girlkun/generated/sql/PlayerSql.java",
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        {
+          "name": "account_id",
+          "columns": [
+            "account_id"
+          ],
+          "unique": true,
+          "type": "UNIQUE"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "name": "player_ibfk_1",
+          "columns": [
+            "account_id"
+          ],
+          "referenced_table": "account",
+          "referenced_columns": [
+            "id"
+          ],
+          "on_delete": null,
+          "on_update": null
+        }
+      ],
+      "columns": [
+        {
+          "name": "id",
+          "field_name": "id",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": true,
+          "default": null
+        },
+        {
+          "name": "account_id",
+          "field_name": "accountId",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "NULL"
+        },
+        {
+          "name": "name",
+          "field_name": "name",
+          "sql_type": "varchar(20)",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "head",
+          "field_name": "head",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "102"
+        },
+        {
+          "name": "gender",
+          "field_name": "gender",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "have_tennis_space_ship",
+          "field_name": "haveTennisSpaceShip",
+          "sql_type": "tinyint(1)",
+          "java_type": "Boolean",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "0"
+        },
+        {
+          "name": "clan_id_sv1",
+          "field_name": "clanIdSv1",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "-1"
+        },
+        {
+          "name": "clan_id_sv2",
+          "field_name": "clanIdSv2",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "-1"
+        },
+        {
+          "name": "data_inventory",
+          "field_name": "dataInventory",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "data_location",
+          "field_name": "dataLocation",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "data_point",
+          "field_name": "dataPoint",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "data_magic_tree",
+          "field_name": "dataMagicTree",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "items_body",
+          "field_name": "itemsBody",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "items_bag",
+          "field_name": "itemsBag",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "items_box",
+          "field_name": "itemsBox",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "items_box_lucky_round",
+          "field_name": "itemsBoxLuckyRound",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "friends",
+          "field_name": "friends",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "enemies",
+          "field_name": "enemies",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "data_intrinsic",
+          "field_name": "dataIntrinsic",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "data_item_time",
+          "field_name": "dataItemTime",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "data_item_time_sieu_cap",
+          "field_name": "dataItemTimeSieuCap",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "data_task",
+          "field_name": "dataTask",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "data_mabu_egg",
+          "field_name": "dataMabuEgg",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "data_charm",
+          "field_name": "dataCharm",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "skills",
+          "field_name": "skills",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "skills_shortcut",
+          "field_name": "skillsShortcut",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "pet",
+          "field_name": "pet",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "data_black_ball",
+          "field_name": "dataBlackBall",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "data_side_task",
+          "field_name": "dataSideTask",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "create_time",
+          "field_name": "createTime",
+          "sql_type": "timestamp",
+          "java_type": "java.sql.Timestamp",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "current_timestamp()"
+        },
+        {
+          "name": "violate",
+          "field_name": "violate",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "0"
+        },
+        {
+          "name": "pointPvp",
+          "field_name": "pointPvp",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "0"
+        },
+        {
+          "name": "NguHanhSonPoint",
+          "field_name": "nguHanhSonPoint",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "0"
+        },
+        {
+          "name": "data_card",
+          "field_name": "dataCard",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "bill_data",
+          "field_name": "billData",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "dataArchiverment",
+          "field_name": "dataArchiverment",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        }
+      ]
+    },
+    {
+      "name": "post_question",
+      "class_name": "PostQuestion",
+      "java_model": "src/com/girlkun/generated/model/PostQuestionRow.java",
+      "java_sql": "src/com/girlkun/generated/sql/PostQuestionSql.java",
+      "primary_key": [
+        "question_id"
+      ],
+      "indexes": [
+        {
+          "name": "FKpijp3eahwssnf3qu27bydj928",
+          "columns": [
+            "account_id"
+          ],
+          "unique": false,
+          "type": "KEY"
+        }
+      ],
+      "foreign_keys": [],
+      "columns": [
+        {
+          "name": "question_id",
+          "field_name": "questionId",
+          "sql_type": "bigint(20)",
+          "java_type": "Long",
+          "nullable": false,
+          "auto_increment": true,
+          "default": null
+        },
+        {
+          "name": "title",
+          "field_name": "title",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "content",
+          "field_name": "content",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "NULL"
+        },
+        {
+          "name": "created",
+          "field_name": "created",
+          "sql_type": "timestamp",
+          "java_type": "java.sql.Timestamp",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "current_timestamp()"
+        },
+        {
+          "name": "STATUS",
+          "field_name": "status",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "0"
+        },
+        {
+          "name": "account_id",
+          "field_name": "accountId",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        }
+      ]
+    },
+    {
+      "name": "radar",
+      "class_name": "Radar",
+      "java_model": "src/com/girlkun/generated/model/RadarRow.java",
+      "java_sql": "src/com/girlkun/generated/sql/RadarSql.java",
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [],
+      "foreign_keys": [],
+      "columns": [
+        {
+          "name": "id",
+          "field_name": "id",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "iconId",
+          "field_name": "iconId",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "0"
+        },
+        {
+          "name": "rank",
+          "field_name": "rank",
+          "sql_type": "tinyint(4)",
+          "java_type": "Byte",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "0"
+        },
+        {
+          "name": "max",
+          "field_name": "max",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "60"
+        },
+        {
+          "name": "type",
+          "field_name": "type",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "0"
+        },
+        {
+          "name": "template",
+          "field_name": "template",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "1"
+        },
+        {
+          "name": "body",
+          "field_name": "body",
+          "sql_type": "varchar(500)",
+          "java_type": "String",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "'[]'"
+        },
+        {
+          "name": "name",
+          "field_name": "name",
+          "sql_type": "varchar(500)",
+          "java_type": "String",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "''"
+        },
+        {
+          "name": "info",
+          "field_name": "info",
+          "sql_type": "varchar(2000)",
+          "java_type": "String",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "''"
+        },
+        {
+          "name": "options",
+          "field_name": "options",
+          "sql_type": "varchar(2000)",
+          "java_type": "String",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "'[]'"
+        },
+        {
+          "name": "require",
+          "field_name": "require",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "-1"
+        },
+        {
+          "name": "require_level",
+          "field_name": "requireLevel",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "0"
+        },
+        {
+          "name": "aura_id",
+          "field_name": "auraId",
+          "sql_type": "smallint(6)",
+          "java_type": "Short",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "-1"
+        }
+      ]
+    },
+    {
+      "name": "recharge_card",
+      "class_name": "RechargeCard",
+      "java_model": "src/com/girlkun/generated/model/RechargeCardRow.java",
+      "java_sql": "src/com/girlkun/generated/sql/RechargeCardSql.java",
+      "primary_key": [
+        "recharge_card_id"
+      ],
+      "indexes": [
+        {
+          "name": "card_detail_id",
+          "columns": [
+            "card_detail_id"
+          ],
+          "unique": false,
+          "type": "KEY"
+        },
+        {
+          "name": "account_id",
+          "columns": [
+            "account_id"
+          ],
+          "unique": false,
+          "type": "KEY"
+        }
+      ],
+      "foreign_keys": [],
+      "columns": [
+        {
+          "name": "recharge_card_id",
+          "field_name": "rechargeCardId",
+          "sql_type": "bigint(20)",
+          "java_type": "Long",
+          "nullable": false,
+          "auto_increment": true,
+          "default": null
+        },
+        {
+          "name": "card_detail_id",
+          "field_name": "cardDetailId",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "account_id",
+          "field_name": "accountId",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "seri",
+          "field_name": "seri",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "NULL"
+        },
+        {
+          "name": "CODE",
+          "field_name": "code",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "NULL"
+        },
+        {
+          "name": "Created",
+          "field_name": "created",
+          "sql_type": "timestamp",
+          "java_type": "java.sql.Timestamp",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "current_timestamp()"
+        },
+        {
+          "name": "STATUS",
+          "field_name": "status",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "1"
+        },
+        {
+          "name": "trans_id",
+          "field_name": "transId",
+          "sql_type": "longtext",
+          "java_type": "String",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "NULL"
+        }
+      ]
+    },
+    {
+      "name": "shop",
+      "class_name": "Shop",
+      "java_model": "src/com/girlkun/generated/model/ShopRow.java",
+      "java_sql": "src/com/girlkun/generated/sql/ShopSql.java",
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        {
+          "name": "npc_id",
+          "columns": [
+            "npc_id"
+          ],
+          "unique": false,
+          "type": "KEY"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "name": "shop_ibfk_1",
+          "columns": [
+            "npc_id"
+          ],
+          "referenced_table": "npc_template",
+          "referenced_columns": [
+            "id"
+          ],
+          "on_delete": null,
+          "on_update": null
+        }
+      ],
+      "columns": [
+        {
+          "name": "id",
+          "field_name": "id",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": true,
+          "default": null
+        },
+        {
+          "name": "npc_id",
+          "field_name": "npcId",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "tag_name",
+          "field_name": "tagName",
+          "sql_type": "varchar(50)",
+          "java_type": "String",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "NULL"
+        },
+        {
+          "name": "type_shop",
+          "field_name": "typeShop",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "NULL"
+        }
+      ]
+    },
+    {
+      "name": "shop_ky_gui",
+      "class_name": "ShopKyGui",
+      "java_model": "src/com/girlkun/generated/model/ShopKyGuiRow.java",
+      "java_sql": "src/com/girlkun/generated/sql/ShopKyGuiSql.java",
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [],
+      "foreign_keys": [],
+      "columns": [
+        {
+          "name": "id",
+          "field_name": "id",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "player_id",
+          "field_name": "playerId",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "tab",
+          "field_name": "tab",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "item_id",
+          "field_name": "itemId",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "gold",
+          "field_name": "gold",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "gem",
+          "field_name": "gem",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "quantity",
+          "field_name": "quantity",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "itemOption",
+          "field_name": "itemOption",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "'[]'"
+        },
+        {
+          "name": "isUpTop",
+          "field_name": "isUpTop",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "isBuy",
+          "field_name": "isBuy",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        }
+      ]
+    },
+    {
+      "name": "side_task_template",
+      "class_name": "SideTaskTemplate",
+      "java_model": "src/com/girlkun/generated/model/SideTaskTemplateRow.java",
+      "java_sql": "src/com/girlkun/generated/sql/SideTaskTemplateSql.java",
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [],
+      "foreign_keys": [],
+      "columns": [
+        {
+          "name": "id",
+          "field_name": "id",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "NAME",
+          "field_name": "name",
+          "sql_type": "varchar(255)",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "max_count_lv1",
+          "field_name": "maxCountLv1",
+          "sql_type": "varchar(255)",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "max_count_lv2",
+          "field_name": "maxCountLv2",
+          "sql_type": "varchar(255)",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "max_count_lv3",
+          "field_name": "maxCountLv3",
+          "sql_type": "varchar(255)",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "max_count_lv4",
+          "field_name": "maxCountLv4",
+          "sql_type": "varchar(255)",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "max_count_lv5",
+          "field_name": "maxCountLv5",
+          "sql_type": "varchar(255)",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        }
+      ]
+    },
+    {
+      "name": "skill_template",
+      "class_name": "SkillTemplate",
+      "java_model": "src/com/girlkun/generated/model/SkillTemplateRow.java",
+      "java_sql": "src/com/girlkun/generated/sql/SkillTemplateSql.java",
+      "primary_key": [
+        "nclass_id",
+        "id"
+      ],
+      "indexes": [],
+      "foreign_keys": [
+        {
+          "name": "skill_template_ibfk_1",
+          "columns": [
+            "nclass_id"
+          ],
+          "referenced_table": "nclass",
+          "referenced_columns": [
+            "id"
+          ],
+          "on_delete": null,
+          "on_update": null
+        }
+      ],
+      "columns": [
+        {
+          "name": "nclass_id",
+          "field_name": "nclassId",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "id",
+          "field_name": "id",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "NAME",
+          "field_name": "name",
+          "sql_type": "varchar(50)",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "max_point",
+          "field_name": "maxPoint",
+          "sql_type": "smallint(6)",
+          "java_type": "Short",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "7"
+        },
+        {
+          "name": "mana_use_type",
+          "field_name": "manaUseType",
+          "sql_type": "smallint(6)",
+          "java_type": "Short",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "TYPE",
+          "field_name": "type",
+          "sql_type": "smallint(6)",
+          "java_type": "Short",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "icon_id",
+          "field_name": "iconId",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "dam_info",
+          "field_name": "damInfo",
+          "sql_type": "varchar(255)",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "slot",
+          "field_name": "slot",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "skills",
+          "field_name": "skills",
+          "sql_type": "text",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        }
+      ]
+    },
+    {
+      "name": "small_version",
+      "class_name": "SmallVersion",
+      "java_model": "src/com/girlkun/generated/model/SmallVersionRow.java",
+      "java_sql": "src/com/girlkun/generated/sql/SmallVersionSql.java",
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [],
+      "foreign_keys": [],
+      "columns": [
+        {
+          "name": "id",
+          "field_name": "id",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "x1",
+          "field_name": "x1",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "x2",
+          "field_name": "x2",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "x3",
+          "field_name": "x3",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "x4",
+          "field_name": "x4",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        }
+      ]
+    },
+    {
+      "name": "tab_shop",
+      "class_name": "TabShop",
+      "java_model": "src/com/girlkun/generated/model/TabShopRow.java",
+      "java_sql": "src/com/girlkun/generated/sql/TabShopSql.java",
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [
+        {
+          "name": "shop_id",
+          "columns": [
+            "shop_id"
+          ],
+          "unique": false,
+          "type": "KEY"
+        }
+      ],
+      "foreign_keys": [],
+      "columns": [
+        {
+          "name": "id",
+          "field_name": "id",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": true,
+          "default": null
+        },
+        {
+          "name": "shop_id",
+          "field_name": "shopId",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "NAME",
+          "field_name": "name",
+          "sql_type": "varchar(50)",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        }
+      ]
+    },
+    {
+      "name": "task_main_template",
+      "class_name": "TaskMainTemplate",
+      "java_model": "src/com/girlkun/generated/model/TaskMainTemplateRow.java",
+      "java_sql": "src/com/girlkun/generated/sql/TaskMainTemplateSql.java",
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [],
+      "foreign_keys": [],
+      "columns": [
+        {
+          "name": "id",
+          "field_name": "id",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "NAME",
+          "field_name": "name",
+          "sql_type": "varchar(255)",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "detail",
+          "field_name": "detail",
+          "sql_type": "varchar(255)",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        }
+      ]
+    },
+    {
+      "name": "task_sub_template",
+      "class_name": "TaskSubTemplate",
+      "java_model": "src/com/girlkun/generated/model/TaskSubTemplateRow.java",
+      "java_sql": "src/com/girlkun/generated/sql/TaskSubTemplateSql.java",
+      "primary_key": [],
+      "indexes": [
+        {
+          "name": "task_main_id",
+          "columns": [
+            "task_main_id"
+          ],
+          "unique": false,
+          "type": "KEY"
+        }
+      ],
+      "foreign_keys": [],
+      "columns": [
+        {
+          "name": "task_main_id",
+          "field_name": "taskMainId",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "NAME",
+          "field_name": "name",
+          "sql_type": "varchar(255)",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "max_count",
+          "field_name": "maxCount",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "-1"
+        },
+        {
+          "name": "notify",
+          "field_name": "notify",
+          "sql_type": "varchar(255)",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "''"
+        },
+        {
+          "name": "npc_id",
+          "field_name": "npcId",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "-1"
+        },
+        {
+          "name": "map",
+          "field_name": "map",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        }
+      ]
+    },
+    {
+      "name": "token",
+      "class_name": "Token",
+      "java_model": "src/com/girlkun/generated/model/TokenRow.java",
+      "java_sql": "src/com/girlkun/generated/sql/TokenSql.java",
+      "primary_key": [
+        "token_id"
+      ],
+      "indexes": [
+        {
+          "name": "account_id",
+          "columns": [
+            "account_id"
+          ],
+          "unique": true,
+          "type": "UNIQUE"
+        },
+        {
+          "name": "UK_1l8br3dq53yfan1deqeb246os",
+          "columns": [
+            "account_id"
+          ],
+          "unique": true,
+          "type": "UNIQUE"
+        }
+      ],
+      "foreign_keys": [],
+      "columns": [
+        {
+          "name": "token_id",
+          "field_name": "tokenId",
+          "sql_type": "bigint(20)",
+          "java_type": "Long",
+          "nullable": false,
+          "auto_increment": true,
+          "default": null
+        },
+        {
+          "name": "CODE",
+          "field_name": "code",
+          "sql_type": "varchar(50)",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "created",
+          "field_name": "created",
+          "sql_type": "date",
+          "java_type": "java.sql.Date",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "curdate()"
+        },
+        {
+          "name": "account_id",
+          "field_name": "accountId",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "expiry",
+          "field_name": "expiry",
+          "sql_type": "date",
+          "java_type": "java.sql.Date",
+          "nullable": true,
+          "auto_increment": false,
+          "default": "NULL"
+        }
+      ]
+    },
+    {
+      "name": "type_item",
+      "class_name": "TypeItem",
+      "java_model": "src/com/girlkun/generated/model/TypeItemRow.java",
+      "java_sql": "src/com/girlkun/generated/sql/TypeItemSql.java",
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [],
+      "foreign_keys": [],
+      "columns": [
+        {
+          "name": "id",
+          "field_name": "id",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": true,
+          "default": null
+        },
+        {
+          "name": "NAME",
+          "field_name": "name",
+          "sql_type": "varchar(50)",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": "''"
+        }
+      ]
+    },
+    {
+      "name": "type_map",
+      "class_name": "TypeMap",
+      "java_model": "src/com/girlkun/generated/model/TypeMapRow.java",
+      "java_sql": "src/com/girlkun/generated/sql/TypeMapSql.java",
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [],
+      "foreign_keys": [],
+      "columns": [
+        {
+          "name": "id",
+          "field_name": "id",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        },
+        {
+          "name": "NAME",
+          "field_name": "name",
+          "sql_type": "varchar(55)",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        }
+      ]
+    },
+    {
+      "name": "type_sell_item_shop",
+      "class_name": "TypeSellItemShop",
+      "java_model": "src/com/girlkun/generated/model/TypeSellItemShopRow.java",
+      "java_sql": "src/com/girlkun/generated/sql/TypeSellItemShopSql.java",
+      "primary_key": [
+        "id"
+      ],
+      "indexes": [],
+      "foreign_keys": [],
+      "columns": [
+        {
+          "name": "id",
+          "field_name": "id",
+          "sql_type": "int(11)",
+          "java_type": "Integer",
+          "nullable": false,
+          "auto_increment": true,
+          "default": null
+        },
+        {
+          "name": "NAME",
+          "field_name": "name",
+          "sql_type": "varchar(50)",
+          "java_type": "String",
+          "nullable": false,
+          "auto_increment": false,
+          "default": null
+        }
+      ]
+    }
+  ]
+}
