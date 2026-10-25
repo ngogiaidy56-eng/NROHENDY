@@ -411,6 +411,9 @@ def previous_files(root: Path) -> list[str]:
 
 
 def safe_generated(path: str) -> bool:
+    candidate = Path(path)
+    if candidate.is_absolute() or ".." in candidate.parts:
+        return False
     return path.startswith(GENERATED_PREFIX) or path == DOC_PATH
 
 

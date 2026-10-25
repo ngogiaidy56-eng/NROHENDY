@@ -14,6 +14,8 @@ python tools/sql-scaffold/generate.py --prune
 python tools/sql-scaffold/generate.py --check
 ```
 
+Windows users can run `scripts/generate-schema-scaffold.bat`; Linux/macOS users can run `scripts/generate-schema-scaffold.sh`.
+
 When hendy.sql or the generator changes on main, GitHub Actions runs the parser tests, validates the SQL baseline, regenerates the files and commits generated updates when needed. Generated models are DTOs and SQL classes contain query strings only; they do not implement database connections, working DAOs, authentication, transactions or gameplay.
 
 ## Database layout
