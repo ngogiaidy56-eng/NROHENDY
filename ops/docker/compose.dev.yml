@@ -1,0 +1,21 @@
+# Development-only database. Do not expose this service publicly.
+services:
+  mysql:
+    image: mysql:8.4
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: nro_hendy
+      MYSQL_USER: nro_app
+      MYSQL_PASSWORD: ${DB_PASSWORD:?Set DB_PASSWORD in your shell or local .env}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?Set MYSQL_ROOT_PASSWORD in your shell or local .env}
+    ports:
+      - "127.0.0.1:3306:3306"
+    volumes:
+      - mysql-dev-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-uroot", "-p$${MYSQL_ROOT_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+volumes:
+  mysql-dev-data:

@@ -1,0 +1,36 @@
+# Java / IDE build output
+/build/
+/out/
+/target/
+/dist/*.jar
+/dist/lib/
+*.class
+*.log
+/log/
+/logs/
+.idea/workspaces/
+.idea/shelf/
+*.iml
+# Local configuration / secrets
+.env
+.env.*
+!.env.example
+/data/config/server.properties
+/data/config/database.json
+/config/secrets.properties
+*.keystore
+*.jks
+*.p12
+*.pem
+# Player data and database backups
+/database/backups/
+/backups/
+*.sql.gz
+*.dump
+*.bak
+*.db
+# OS/editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.tmp

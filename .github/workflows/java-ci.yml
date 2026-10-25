@@ -1,0 +1,22 @@
+name: Java CI (adapt to existing Ant project)
+on:
+  push:
+  pull_request:
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          # Change this to the Java version used by the actual source tree.
+          java-version: '17'
+      - name: Check Ant build file exists
+        run: test -f build.xml || (echo 'Blueprint only: merge with the existing Ant source project first.' && exit 1)
+      - name: List Ant targets
+        run: ant -p
+      # Enable compile after verifying correct target/JDK:
+      # - name: Compile
+      #   run: ant clean jar

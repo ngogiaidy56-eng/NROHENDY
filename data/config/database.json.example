@@ -1,0 +1,11 @@
+{
+  "driver": "com.mysql.cj.jdbc.Driver",
+  "url": "jdbc:mysql://127.0.0.1:3306/nro_hendy?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC",
+  "username": "nro_app",
+  "password": "CHANGE_ME_LOCALLY",
+  "pool": {
+    "minimumIdle": 2,
+    "maximumPoolSize": 10,
+    "connectionTimeoutMs": 10000
+  }
+}

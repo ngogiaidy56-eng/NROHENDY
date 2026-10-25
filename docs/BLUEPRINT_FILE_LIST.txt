@@ -1,0 +1,10 @@
+NROHENDY — ADDITIVE BLUEPRINT
+Core: README.md, .gitignore, .env.example
+Config: data/config/*.example
+Database: database/README.md, database/{docs,migrations,seeds}
+Docs: docs/DIRECTORY_STRUCTURE.md, docs/IMPLEMENTATION_ROADMAP.md, docs/SECURITY_CHECKLIST.md
+Ops: ops/docker/compose.dev.yml, ops/systemd/nrohend.service.example
+Scripts: scripts/check-config.sh, scripts/check-config.bat
+CI: .github/workflows/java-ci.yml
+Package placeholders: network, server lifecycle/config/health, account/auth/world/movement/combat/inventory/item/skill/quest/trade/shop/party/ranking/event/notification, admin, scheduler and observability.
+Tests/tools placeholders: test/{unit,integration,network,load,resources}, tools/{data-validator,protocol-inspector}.

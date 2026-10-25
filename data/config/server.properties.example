@@ -1,0 +1,14 @@
+# Copy to server.properties and adjust locally. Do not commit populated settings.
+server.name=NROHENDY
+server.environment=development
+server.bindAddress=127.0.0.1
+server.port=14445
+server.maxConnections=1000
+server.readTimeoutMillis=15000
+server.packetMaxBytes=1048576
+server.shutdownGraceMillis=15000
+server.logLevel=INFO
+server.dataDirectory=data/girlkun
+server.admin.enabled=false
+server.admin.bindAddress=127.0.0.1
+server.admin.port=18080
