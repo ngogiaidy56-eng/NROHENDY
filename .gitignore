@@ -11,6 +11,7 @@
 .idea/workspaces/
 .idea/shelf/
 *.iml
+
 # Local configuration / secrets
 .env
 .env.*
@@ -22,13 +23,20 @@
 *.jks
 *.p12
 *.pem
+*.private.sql
+*.production.sql
+*.local.sql
+/secrets/
+
 # Player data and database backups
 /database/backups/
+/database/private/
 /backups/
 *.sql.gz
 *.dump
 *.bak
 *.db
+
 # OS/editor files
 .DS_Store
 Thumbs.db

@@ -1,38 +1,35 @@
-# NROHENDY — Blueprint cấu trúc máy chủ game
+# NROHENDY — Java game-server source workspace
 
-> **Lưu ý:** Đây là bộ khung kiến trúc và cấu hình mẫu, chưa phải bản sao mã nguồn NROHENDY đang chạy. Chưa có mã nguồn Java gốc, `hendy.sql`, `build.xml` và tài nguyên thực tế trong dữ liệu đầu vào. Hãy ghép các thư mục bổ sung vào dự án hiện tại; không ghi đè các lớp Java cũ.
+This repository currently contains a reviewed database baseline, static game-template data, an expanded Java package layout and operational documentation. It is **not yet a complete runnable NRO server**: the original Java implementation, verified protocol handlers, build file, runtime dependencies and game assets must be integrated from the existing project before gameplay can be tested.
 
-## Mục tiêu
-- Giữ cấu trúc Java/Ant và package `com.girlkun`.
-- Tách lớp mạng, phiên người chơi, thế giới, nghiệp vụ game, DAO và tài nguyên.
-- Bổ sung hướng dẫn database migrations, kiểm thử, cấu hình, vận hành và CI.
-- Không commit mật khẩu, API key, dữ liệu người chơi, log production hay database dump.
+## Database layout
 
-## Bắt đầu
-1. Sao lưu mã nguồn và database hiện tại.
-2. Giữ nguyên `src/com/girlkun` đang có; thêm từng package sau khi xác minh cách đặt tên/class của dự án cũ.
-3. Đối chiếu `hendy.sql` với schema đang chạy trước khi thiết kế migration. Không chạy SQL chưa review lên database production.
-4. Sao chép `data/config/server.properties.example` thành `server.properties` và `database.json.example` thành `database.json`; chỉ chỉnh giá trị cục bộ.
-5. Kiểm tra phiên bản Java, classpath thư viện, `build.xml` và `manifest.mf` trước khi build JAR.
-6. Chạy test trên môi trường development/staging trước khi mở máy chủ công khai.
+- `hendy.sql`: schema only; contains no table data inserts.
+- `database/seeds/game-static-data.sql`: static maps, items, mobs, parts, skills, shops and template/look-up data only.
+- `database/migrations/`: future versioned schema changes.
+- `database/backups/` and `database/private/`: local/private only; never commit real account, player, payment, token or gift-code records.
 
-## Nguyên tắc kiến trúc
-- **Server authoritative:** client không tự quyết tiền, vật phẩm, sát thương, tốc độ, vị trí hợp lệ hoặc quyền quản trị.
-- **Network:** giới hạn packet size, validate input, timeout, rate limit và dọn session lỗi; không log mật khẩu/token.
-- **Database:** prepared statements, transaction cho giao dịch tài sản, quyền DB tối thiểu và backup/restore đã diễn tập.
-- **Lifecycle:** shutdown có kiểm soát, lưu trạng thái cần thiết, đóng socket và connection pool.
-- **Admin:** quyền RBAC, xác thực, audit log và hạn chế truy cập mạng.
-- **Tài nguyên:** kiểm tra dữ liệu map/mob/item khi khởi động; giữ version và checksum khi cần.
+The legacy dump contained user/runtime rows. The public working version omits account/password rows, player save-state rows, guild membership state, gift codes and top-up records. Keep any original data only in a private, access-controlled backup.
 
-## Build và chạy
-Bộ khung này chưa có logic gameplay hoặc protocol server thực tế nên chưa thể build/chạy độc lập. Hãy dùng `build.xml`, `run.bat` và thư viện gốc của dự án sau khi tích hợp. Workflow CI trong `.github/workflows/java-ci.yml` là điểm khởi đầu và phải chỉnh JDK/Ant targets theo dự án thật.
+## Import into a fresh test database
 
-## Cấu trúc
-- `src/com/girlkun/network`: transport, codec, protocol, session và bảo vệ input.
-- `src/com/girlkun/services`: nghiệp vụ tài khoản, world, movement, combat, inventory, quest, trade và event.
-- `database/`: vị trí migration/seed/tài liệu; không đặt backup hoặc dữ liệu production trong Git.
-- `data/config/`: mẫu cấu hình không chứa thông tin xác thực thật.
-- `ops/`, `scripts/`: mẫu vận hành và kiểm tra cấu hình.
-- `docs/`, `test/`: tài liệu triển khai và bố cục kiểm thử.
+Create a new database first; do not run this sequence against an existing live schema:
 
-**Trạng thái hiện tại:** blueprint scaffold; chưa xác minh build, kết nối MySQL, tương thích client hoặc gameplay. Mã nguồn Java gốc cần được tích hợp riêng.
+```sh
+mysql -u root -p -e "CREATE DATABASE IF NOT EXISTS hendy CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;"
+mysql -u <migration_user> -p hendy < hendy.sql
+mysql -u <migration_user> -p hendy < database/seeds/game-static-data.sql
+```
+
+The schema contains a stored function. The migration identity needs the appropriate routine privilege. Use a separate least-privilege account for the running game server. Details and caveats are in `database/README.md` and `docs/DB_SCHEMA_AUDIT.md`.
+
+## Source structure
+
+- `src/com/girlkun/`: existing/expected Java packages for server, network, models, DAO and services.
+- `data/girlkun/`: expected game resources; the folder markers are not actual image/map data.
+- `lib/`: place only dependencies whose versions and licenses have been verified.
+- `docs/`, `test/`, `ops/`, `scripts/`: implementation, safety, validation and runbook materials.
+
+## Validation
+
+Run `python scripts/validate_sql.py` to statically check the schema/seed split and ensure user-specific tables are not seeded. This validation does not connect to MySQL and does not prove Java compilation or gameplay compatibility.
