@@ -1,0 +1,47 @@
+name: Generate Schema Scaffolding
+on:
+  push:
+    branches: [main]
+    paths:
+      - "hendy.sql"
+      - "tools/sql-scaffold/**"
+      - ".github/workflows/generate-schema-scaffold.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: schema-scaffold-main
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Test generator
+        run: python -m unittest discover -s tools/sql-scaffold/tests -p "test_*.py"
+      - name: Validate SQL safety baseline
+        run: python scripts/validate_sql.py
+      - name: Generate files from hendy.sql
+        run: python tools/sql-scaffold/generate.py --prune
+      - name: Verify generated files are deterministic
+        run: python tools/sql-scaffold/generate.py --check
+      - name: Check whitespace errors
+        run: git diff --check
+      - name: Commit generated code and docs if changed
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/com/girlkun/generated docs/database/schema-reference.md
+          if git diff --cached --quiet; then
+            echo "Generated files are already up to date."
+          else
+            git commit -m "chore: regenerate schema-derived scaffold"
+            git push
+          fi
