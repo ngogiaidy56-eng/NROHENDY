@@ -319,7 +319,7 @@ def render_sql_class(table: dict[str, Any]) -> str:
     select = f"SELECT {columns} FROM {sql_identifier(table['name'])}"
     lines = [
         "package com.girlkun.generated.sql;", "",
-        "/** Generated SQL constants from hendy.sql; no database operations are executed here. DO NOT EDIT. */",
+        "/** Generated SQL constants from hendy.sql; no DB operations are performed here. DO NOT EDIT. */",
         f"public final class {table['class_name']}Sql {{",
         f"    public static final String TABLE_NAME = {java_literal(table['name'])};",
         f"    public static final String COLUMNS = {java_literal(columns)};",
